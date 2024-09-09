@@ -1,0 +1,19 @@
+ALGORITHM Checkpoint_Algorithms_and_its_elements
+
+VAR 
+    i,j : INTEGER; // les compteurs tableaux
+    n : INTEGER;
+    val : INTEGER
+    T : ARRAY_OF INTEGER // declaration variable
+BEGIN
+    N := length(T);
+    For i FROM 0 TO N-1 STEP 1 DO 
+        val := T[i];
+        j := i - 1;
+        WHILE (j >= 0 AND val < T[j]) DO 
+            T[j + 1] := T[j];
+            j := j - 1;
+        END_WHILE
+        T[j + 1] := val;
+    END_FOR
+END
